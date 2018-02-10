@@ -1,0 +1,97 @@
+/**
+ * React Starter Kit (https://www.reactstarterkit.com/)
+ *
+ * Copyright © 2014-present Kriasoft, LLC. All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.txt file in the root directory of this source tree.
+ */
+
+@import '../variables.css';
+
+:root {
+  --brand-color: #b366ff;
+  --hue-shift: 0deg;
+}
+
+.root {
+  background: #000;
+  color: #000;
+}
+
+.loveletter {
+  padding: 0;
+  color: #fff;
+  text-shadow: 1px 1px 2px black;
+  font-size: 3em;
+  margin: 0;
+  left: 300px;
+  top: 200px;
+  position: absolute;
+  font-weight: bold;
+  z-index: 100;
+  word-wrap: break-word;
+  width: 550px;
+}
+
+.pattern {
+  z-index: 1;
+  position: absolute;
+  width: var(--max-content-width);
+  filter: hue-rotate(var(--hue-shift));
+}
+
+.border {
+  z-index: 2;
+  width: var(--max-content-width);
+  position: absolute;
+}
+
+.flair {
+  z-index: 3;
+  top: 0px;
+  right: 200px;
+  height: 500px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 20px 0;
+  max-width: var(--max-content-width);
+  height: 800px;
+  position: relative;
+  background: #ffffff;
+}
+
+.brand {
+  color: color(var(--brand-color) lightness(+10%));
+  text-decoration: none;
+  font-size: 1.75em; /* ~28px */
+}
+
+.logo {
+  height: 80px;
+}
+
+.brandTxt {
+  margin-left: 10px;
+}
+
+.banner {
+  text-align: center;
+}
+
+.bannerTitle {
+  margin: 0;
+  padding: 10px;
+  font-weight: normal;
+  font-size: 4em;
+  line-height: 1em;
+}
+
+.bannerDesc {
+  padding: 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.25em;
+  margin: 0;
+}
