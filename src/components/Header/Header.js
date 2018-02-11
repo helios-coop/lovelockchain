@@ -25,6 +25,10 @@ class Header extends React.Component {
             <img className={s.logo} src={logoUrl} alt="<3" />
             <img className={s.logo} src={logoUrlText} alt="Love Lock Chain" />
           </Link>
+          <link
+            rel="stylesheet"
+            href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
+          />
         </div>
       </div>
     );

@@ -27,6 +27,7 @@ class Layout extends React.Component {
     return (
       <div>
         <Header />
+
         {this.props.children}
         <div className={s.footer}>
           <Feedback />

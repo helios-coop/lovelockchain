@@ -46,7 +46,7 @@ class NewCard extends React.Component {
       this.setState({ from: term });
     }
     if (id == 'xoxo') {
-      this.setState({ xoxo: this.state.xoxo + 'xo' });
+      this.setState({ xoxo: `${this.state.xoxo}xo` });
     }
     this.hashMessage();
   }
@@ -56,7 +56,7 @@ class NewCard extends React.Component {
 
     this.setState({ loading: true, errorMessage: '' });
 
-    var loveLetter =
+    const loveLetter =
       this.state.msg + this.state.to + this.state.from + this.state.xoxo;
 
     try {
@@ -90,7 +90,7 @@ class NewCard extends React.Component {
                 this.onInput(event.target.value, event.target.id)
               }
             />
-            <Form.Input
+            {/* <Form.Input
               autoHeight
               label="From:"
               id="from"
@@ -101,22 +101,24 @@ class NewCard extends React.Component {
             />
             <Form.TextArea
               autoHeight
+              style={{ color: 'red', 'font-size': '40px' }}
               label="Write Your Love Letter:"
               id="msg"
               value={this.state.msg}
               onChange={event =>
                 this.onInput(event.target.value, event.target.id)
               }
-            />
+            /> */}
             {/* <Message error header="Oops" content={this.state.errorMessage} /> */}
-            <Form.Button
+            {/* <Form.Button
               id="xoxo"
-              onClick={event => this.onInput('', event.target.id)}>
+              onClick={event => this.onInput('', event.target.id)}
+            >
               xo{this.state.xoxo}
-            </Form.Button>
-            <Button loading={this.state.loading} primary>
+            </Form.Button> */}
+            {/* <Button loading={this.state.loading} primary>
               Send to the Blockchain!
-            </Button>
+            </Button> */}
           </Form>
         </div>
         <div className={s.container}>

@@ -1,5 +1,7 @@
 @import '../../components/variables.css';
 
+/* @import 'semantic-ui-css/semantic.min.css'; */
+
 .root {
   padding-left: 20px;
   padding-right: 20px;
@@ -13,7 +15,9 @@
 .container {
   margin: 0 auto;
   padding: 0 0 40px;
-  max-width: var(--max-content-width);
+  max-width: 1000px;
+  max-height: 500px;
+  overflow: hidden;
 }
 
 .newsItem {
