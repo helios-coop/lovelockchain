@@ -24,7 +24,7 @@ class Card extends React.Component {
           <img className={s.pattern} src={require(`${bkgd}${a}.png`)} />
           <img className={s.border} src={require(`${brdr}${b}.png`)} />
           <img className={s.flair} src={require(`${flar}${c}.png`)} />
-          <div className={s.loveletter}>
+          {/* <div className={s.loveletter}>
             {`To:${this.props.to}`}
             <br />
             {`${this.props.msg}`}
@@ -32,7 +32,7 @@ class Card extends React.Component {
             {`From:${this.props.from}`}
             <br />
             {`${this.props.xoxo}`}
-          </div>
+          </div> */}
         </div>
       </div>
     );

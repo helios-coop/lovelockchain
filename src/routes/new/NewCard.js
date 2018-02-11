@@ -5,7 +5,15 @@ import s from './NewCard.css';
 
 import Card from '../../components/Card';
 
-import { Form, Button, Input, Message, TextArea } from 'semantic-ui-react';
+import {
+  Grid,
+  Form,
+  Button,
+  Input,
+  Message,
+  TextArea,
+  Label,
+} from 'semantic-ui-react';
 
 import Web3Utils from 'web3-utils';
 import web3 from '../../ethereum/web3.js';
@@ -81,24 +89,49 @@ class NewCard extends React.Component {
       <div className={s.root}>
         <div>
           <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
-            <Form.Input
-              autoHeight
-              label="To:"
-              id="to"
-              value={this.state.to}
-              onChange={event =>
-                this.onInput(event.target.value, event.target.id)
-              }
-            />
-            {/* <Form.Input
-              autoHeight
-              label="From:"
-              id="from"
-              value={this.state.from}
-              onChange={event =>
-                this.onInput(event.target.value, event.target.id)
-              }
-            />
+            <Grid columns={3}>
+              <Grid.Row>
+                <Grid.Column />
+                <Grid.Column>
+                  <Input
+                    style={{ 'font-size': ' 2em' }}
+                    className={s.toInput}
+                    autoHeight
+                    label="From:"
+                    id="from"
+                    value={this.state.from}
+                    onChange={event =>
+                      this.onInput(event.target.value, event.target.id)
+                    }
+                  />
+                  <Input
+                    style={{ 'font-size': ' 2em' }}
+                    className={s.toInput}
+                    autoHeight
+                    id="to"
+                    value={this.state.to}
+                    onChange={event =>
+                      this.onInput(event.target.value, event.target.id)
+                    }
+                  >
+                    <Label
+                      style={{
+                        width: '120px',
+                        'font-size': '1.5em',
+                        background: '#E8E8E8',
+                      }}
+                      basic
+                    >
+                      To:
+                    </Label>
+                    <input />
+                  </Input>
+                </Grid.Column>
+                <Grid.Column />
+              </Grid.Row>
+            </Grid>
+
+            {/*
             <Form.TextArea
               autoHeight
               style={{ color: 'red', 'font-size': '40px' }}

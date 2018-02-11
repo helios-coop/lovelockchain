@@ -12,6 +12,17 @@
   align-content: center;
 }
 
+input[type='text'] {
+  color: red !important;
+}
+
+.toInput {
+  z-index: 1000;
+  top: 300px !important;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 .container {
   margin: 0 auto;
   padding: 0 0 40px;
