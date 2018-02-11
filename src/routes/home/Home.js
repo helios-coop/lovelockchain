@@ -7,20 +7,12 @@ import cardFactory from '../../ethereum/cardFactory.js';
 import { Card, Button } from 'semantic-ui-react';
 
 class Home extends React.Component {
-  static async getInitialProps() {
-    const locks = await cardFactory.methods.getHashes().call();
-
-    return { locks };
-  }
-
   renderLocks() {
     const items = this.props.locks.map(address => {
-      // this.setState({ cardMessage: getMessage(address) });
-
       return {
         header: address,
         description: (
-          <Link route={`/cards/${address}`}>
+          <Link to={`/cards/${address}`}>
             <a>View Card</a>
           </Link>
         ),
@@ -34,11 +26,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className={s.root}>
-        <div className={s.container}>
-          <Link className={s.newsTitle} to="/card">
-            View Cards
-          </Link>
-        </div>
+        <div className={s.container}>{this.renderLocks()}</div>
       </div>
     );
   }
