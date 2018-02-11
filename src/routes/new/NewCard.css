@@ -5,10 +5,9 @@
   padding-right: 20px;
 }
 
-input {
-  width: var(--max-content-width);
-  margin: 10px;
-  padding: 10px;
+.smallInput {
+  align-items: flex-end;
+  align-content: center;
 }
 
 .container {
