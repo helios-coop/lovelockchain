@@ -9,6 +9,14 @@
 
 @import '../../components/variables.css';
 
+.mb40 {
+  margin-bottom: 40px;
+}
+
+.metaImg {
+  margin-top: 20px;
+}
+
 .root {
   padding-left: 20px;
   padding-right: 20px;
@@ -20,30 +28,11 @@
   max-width: var(--max-content-width);
 }
 
-.newsItem {
-  margin: 0 0 2rem;
+pre {
+  white-space: pre-wrap;
+  font-size: 0.875rem;
 }
 
-.newsTitle {
-  font-size: 1.5rem;
-}
-
-.newsDesc {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: 1.125rem;
-  }
-
-  pre {
-    white-space: pre-wrap;
-    font-size: 0.875rem;
-  }
-
-  img {
-    max-width: 100%;
-  }
+img {
+  max-width: 100%;
 }
