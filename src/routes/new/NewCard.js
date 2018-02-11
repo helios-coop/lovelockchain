@@ -130,8 +130,6 @@ class NewCard extends React.Component {
                 <Grid.Column />
               </Grid.Row>
             </Grid>
-
-            {/*
             <Form.TextArea
               autoHeight
               style={{ color: 'red', 'font-size': '40px' }}
@@ -141,17 +139,17 @@ class NewCard extends React.Component {
               onChange={event =>
                 this.onInput(event.target.value, event.target.id)
               }
-            /> */}
-            {/* <Message error header="Oops" content={this.state.errorMessage} /> */}
-            {/* <Form.Button
+            />
+            <Message error header="Oops" content={this.state.errorMessage} />
+            <Form.Button
               id="xoxo"
               onClick={event => this.onInput('', event.target.id)}
             >
               xo{this.state.xoxo}
-            </Form.Button> */}
-            {/* <Button loading={this.state.loading} primary>
+            </Form.Button>
+            <Button loading={this.state.loading} primary>
               Send to the Blockchain!
-            </Button> */}
+            </Button>
           </Form>
         </div>
         <div className={s.container}>
