@@ -13,9 +13,9 @@ class Card extends React.Component {
   }
 
   render() {
-    let a = parseInt(this.props.hash.substring(2, 4), 16) % 8;
-    let b = parseInt(this.props.hash.substring(4, 6), 16) % 8;
-    let c = parseInt(this.props.hash.substring(6, 8), 16) % 8;
+    const a = parseInt(this.props.hash.substring(2, 4), 16) % 8;
+    const b = parseInt(this.props.hash.substring(4, 6), 16) % 8;
+    const c = parseInt(this.props.hash.substring(6, 8), 16) % 8;
 
     return (
       <div className={s.root}>
