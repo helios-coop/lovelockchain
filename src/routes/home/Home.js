@@ -12,7 +12,7 @@ class Home extends React.Component {
       return {
         header: address,
         description: (
-          <Link to={`/cards/${address}`}>
+          <Link to={`/card/${address}`}>
             <a>View Card</a>
           </Link>
         ),
