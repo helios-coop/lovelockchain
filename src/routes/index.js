@@ -54,7 +54,7 @@ const routes = {
     {
       path: '(.*)',
       load: () => import(/* webpackChunkName: 'not-found' */ './not-found'),
-      action: () => console.log('that happened'),
+      // action: () => console.log('that happened'),
     },
   ],
 

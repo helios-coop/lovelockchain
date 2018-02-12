@@ -5,11 +5,11 @@ import Layout from '../../components/Layout';
 import cardFactory from '../../ethereum/cardFactory.js';
 import { Card, Button } from 'semantic-ui-react';
 
-async function action({ fetch }) {
+async function action() {
   const locks = await cardFactory.methods.getHashes().call();
   // console.log(locks);
   return {
-    title: 'React Starter Kit',
+    title: '',
     component: (
       <Layout>
         <Home locks={locks} />
