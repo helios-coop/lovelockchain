@@ -19,11 +19,6 @@ import Web3Utils from 'web3-utils';
 import web3 from '../../ethereum/web3.js';
 import cardFactory from '../../ethereum/cardFactory.js';
 
-const options = [
-  { key: 'm', text: 'Male', value: 'male' },
-  { key: 'f', text: 'Female', value: 'female' },
-];
-
 class NewCard extends React.Component {
   state = {
     to: 'Margie',
@@ -112,16 +107,14 @@ class NewCard extends React.Component {
                     value={this.state.to}
                     onChange={event =>
                       this.onInput(event.target.value, event.target.id)
-                    }
-                  >
+                    }>
                     <Label
                       style={{
                         width: '120px',
                         'font-size': '1.5em',
                         background: '#E8E8E8',
                       }}
-                      basic
-                    >
+                      basic>
                       To:
                     </Label>
                     <input />
@@ -132,6 +125,7 @@ class NewCard extends React.Component {
             </Grid>
             <Form.TextArea
               autoHeight
+              className={s.toInput}
               style={{ color: 'red', 'font-size': '40px' }}
               label="Write Your Love Letter:"
               id="msg"
@@ -140,17 +134,23 @@ class NewCard extends React.Component {
                 this.onInput(event.target.value, event.target.id)
               }
             />
-            <Message error header="Oops" content={this.state.errorMessage} />
-            <Form.Button
-              id="xoxo"
-              onClick={event => this.onInput('', event.target.id)}
-            >
-              xo{this.state.xoxo}
-            </Form.Button>
-            <Button loading={this.state.loading} primary>
+            <Message
+              className={s.toInput}
+              error
+              header="Oops"
+              content={this.state.errorMessage}
+            />
+
+            <Button className={s.toInput} loading={this.state.loading} primary>
               Send to the Blockchain!
             </Button>
           </Form>
+          <Button
+            className={s.toInput}
+            id="xoxo"
+            onClick={event => this.onInput('', event.target.id)}>
+            xo{this.state.xoxo}
+          </Button>
         </div>
         <div className={s.container}>
           <Card

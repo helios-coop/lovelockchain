@@ -41,11 +41,13 @@ const routes = {
       children: [
         {
           path: '',
-          action: () => console.log('this happened'),
         },
         {
           path: '/:address',
-          action: () => import(/* webpackChunkName: 'my-cards' */ './card'),
+          // action: (ctx, { address }) => `Welcome, ${address}!`,
+          action: context => context.params,
+          // action: console.log(address),
+          load: () => import(/* webpackChunkName: 'my-cards' */ './card'),
         },
       ],
     },

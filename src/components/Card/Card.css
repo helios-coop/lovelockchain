@@ -57,8 +57,8 @@
 .container {
   margin: 0 auto;
   padding: 20px 0;
-  max-width: var(--max-content-width);
-  height: 800px;
+  max-width: 100%;
+
   position: relative;
   background: #ffffff;
 }

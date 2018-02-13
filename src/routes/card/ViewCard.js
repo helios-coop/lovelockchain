@@ -4,15 +4,18 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './ViewCard.css';
 import Card from '../../components/Card';
 
-import Web3Utils from 'web3-utils';
-import web3 from '../../ethereum/web3.js';
+import createBrowserHistory from 'history/createBrowserHistory';
+
 import cardFactory from '../../ethereum/cardFactory.js';
 
 class ViewCard extends React.Component {
-  static async getInitialProps(props) {
-    const card = await CardFactory.methods.cards(props.query.address).call();
+  state = {
+    hash: createBrowserHistory().location.pathname.substring(6),
+  };
 
-    return { card };
+  async getMsg(hash) {
+    const msg = await cardFactory.methods.cards(hash).call();
+    return msg;
   }
 
   render() {
@@ -22,8 +25,8 @@ class ViewCard extends React.Component {
           <Card
             to=""
             from=""
-            msg={this.props.card}
-            hash={this.props.query.address}
+            msg={this.getMsg(this.state.hash)}
+            hash={this.state.hash}
             xoxo=""
           />
         </div>

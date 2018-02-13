@@ -9,7 +9,7 @@ async function action() {
   const locks = await cardFactory.methods.getHashes().call();
   // console.log(locks);
   return {
-    title: '',
+    title: 'Home',
     component: (
       <Layout>
         <Home locks={locks} />
