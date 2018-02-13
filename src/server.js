@@ -133,6 +133,7 @@ app.get('*', async (req, res, next) => {
     }
 
     const data = { ...route };
+    // console.log(data);
     data.children = ReactDOM.renderToString(
       <App context={context}>{route.component}</App>,
     );

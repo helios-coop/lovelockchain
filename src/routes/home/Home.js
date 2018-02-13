@@ -10,17 +10,25 @@ class Home extends React.Component {
   renderLocks() {
     const items = this.props.locks.map(address => {
       return {
-        header: address,
+        header: '',
         description: (
-          <Link to={`/card/${address}`}>
-            <a>View Card</a>
+          <Link
+            style={{
+              fontSize: '20px',
+              color: 'purple',
+              textTransform: 'uppercase',
+            }}
+            to={`/card/${address}`}>
+            {address}
           </Link>
         ),
         fluid: true,
       };
     });
 
-    return <Card.Group items={items} />;
+    return (
+      <Card.Group style={{ background: 'pink', color: 'red' }} items={items} />
+    );
   }
 
   render() {

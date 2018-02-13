@@ -41,11 +41,12 @@ const routes = {
       children: [
         {
           path: '',
+          load: () => import(/* webpackMode: 'eager' */ './home'),
         },
         {
           path: '/:address',
-          // action: (ctx, { address }) => `Welcome, ${address}!`,
-          action: context => context.params,
+          action: ctx => `#${ctx.params.address}`,
+          // action: context => context.params,
           // action: console.log(address),
           load: () => import(/* webpackChunkName: 'my-cards' */ './card'),
         },

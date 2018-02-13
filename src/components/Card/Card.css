@@ -19,6 +19,13 @@
   color: #000;
 }
 
+.theLetter {
+  z-index: 100;
+  position: absolute;
+  font-size: 40px;
+  text-align: center;
+}
+
 .loveletter {
   padding: 0;
   color: #fff;

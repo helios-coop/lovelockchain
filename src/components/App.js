@@ -9,6 +9,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import history from '../history';
 
 const ContextType = {
   // Enables critical path CSS rendering
@@ -50,11 +51,20 @@ class App extends React.PureComponent {
 
   static childContextTypes = ContextType;
 
+  // transition = event => {
+  //   event.preventDefault();
+  //   history.push({
+  //     pathname: event.currentTarget.pathname,
+  //     search: event.currentTarget.search,
+  //   });
+  // };
+
   getChildContext() {
     return this.props.context;
   }
 
   render() {
+    // window.history.pushState('');
     // NOTE: If you need to add or modify header, footer etc. of the app,
     // please do that inside the Layout component.
     return React.Children.only(this.props.children);

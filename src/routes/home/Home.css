@@ -11,11 +11,11 @@
   max-width: var(--max-content-width);
 }
 
-  pre {
-    white-space: pre-wrap;
-    font-size: 0.875rem;
-  }
+pre {
+  white-space: pre-wrap;
+  font-size: 0.875rem;
+}
 
-  img {
-    max-width: 100%;
-  }
+img {
+  max-width: 100%;
+}

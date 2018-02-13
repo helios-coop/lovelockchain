@@ -1,6 +1,6 @@
 @import '../../components/variables.css';
 
-/* @import 'semantic-ui-css/semantic.min.css'; */
+/*@import 'semantic-ui-css/semantic.min.css';*/
 
 .root {
   padding-left: 20px;
@@ -14,48 +14,41 @@
 
 input[type='text'] {
   color: red !important;
-  z-index: 1000;
 }
 
 .toInput {
-  z-index: 1000;
-  top: 300px !important;
+  z-index: 100 !important;
+  top: 140px !important;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
+  right: 100px;
+  background: transparent;
+  position: relative;
+  max-width: 300px;
 }
 
 .container {
+  z-index: -1;
+  position: absolute;
+  top: 120px;
   margin: 0 auto;
-  padding: 0 0 40px;
+  padding: 0 0 0px;
+  max-width: 80%;
+  /*max-height: inherit;*/
+  /*overflow: hidden;*/
+  /*background: transparent;*/
+}
+
+.xoButton {
+  z-index: 200;
+  top: -1000px;
+}
+
+/*pre {
+  white-space: pre-wrap;
+  font-size: 0.875rem;
+}*/
+
+/*img {
   max-width: 100%;
-  max-height: 500px;
-  overflow: hidden;
-}
-
-.newsItem {
-  margin: 0 0 2rem;
-}
-
-.newsTitle {
-  font-size: 1.5rem;
-}
-
-.newsDesc {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: 1.125rem;
-  }
-
-  pre {
-    white-space: pre-wrap;
-    font-size: 0.875rem;
-  }
-
-  img {
-    max-width: 100%;
-  }
-}
+}*/

@@ -21,11 +21,11 @@ import cardFactory from '../../ethereum/cardFactory.js';
 
 class NewCard extends React.Component {
   state = {
-    to: 'Margie',
-    from: 'Dylan',
-    msg: 'I Love You!',
+    to: '',
+    from: '',
+    msg: 'Blockchains Are Forever!',
     xoxo: '',
-    hash: '0x2b04018c49d5ae5c038dc3fd9b58972b969f9ae0adb5a9fe169e3e64b9d1505f',
+    hash: '0xb4032258f78dffb0227d8cacc1300aca34ddcc4f934c7bb64de50576878fecc2',
     errorMessage: '',
     loading: false,
   };
@@ -33,7 +33,8 @@ class NewCard extends React.Component {
   hashMessage() {
     this.setState({
       hash: Web3Utils.soliditySha3(
-        this.state.to + this.state.from + this.state.msg + this.state.xoxo,
+        // this.state.to + this.state.from + this.state.msg + this.state.xoxo,
+        this.state.msg,
       ),
     });
   }
@@ -60,7 +61,8 @@ class NewCard extends React.Component {
     this.setState({ loading: true, errorMessage: '' });
 
     const loveLetter =
-      this.state.msg + this.state.to + this.state.from + this.state.xoxo;
+      // this.state.msg + this.state.to + this.state.from + this.state.xoxo;
+      this.state.msg;
 
     try {
       const accounts = await web3.eth.getAccounts();
@@ -80,28 +82,82 @@ class NewCard extends React.Component {
   };
 
   render() {
+    console.log(this.state.hash);
     return (
       <div className={s.root}>
         <div>
-          <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
-            <Grid columns={3}>
+          <div className={s.container}>
+            <Card
+              to={this.state.to}
+              from={this.state.from}
+              msg={this.state.msg}
+              hash={this.state.hash}
+              xoxo={this.state.xoxo}
+            />
+          </div>
+          <Form
+            className={s.toInput}
+            onSubmit={this.onSubmit}
+            error={!!this.state.errorMessage}>
+            <Form.TextArea
+              autoHeight
+              style={{
+                color: 'red',
+                fontSize: '20px',
+                width: '30%',
+                right: '300px',
+              }}
+              id="msg"
+              value={this.state.msg}
+              onChange={event =>
+                this.onInput(event.target.value, event.target.id)
+              }
+              maxLength="255"
+            />
+            <Button className={s.toInput} loading={this.state.loading} primary>
+              Send to the Blockchain!
+            </Button>
+            <Message
+              className={s.toInput}
+              error
+              header="Oops"
+              content={this.state.errorMessage}
+            />
+            {/* <Grid columns={3}>
               <Grid.Row>
                 <Grid.Column />
                 <Grid.Column>
-                  <Input
-                    style={{ 'font-size': ' 2em' }}
-                    className={s.toInput}
+                  {/* <Input
+                    style={{ 'font-size': ' 1.5em' }}
                     autoHeight
-                    label="From:"
                     id="from"
                     value={this.state.from}
                     onChange={event =>
                       this.onInput(event.target.value, event.target.id)
+                    }>
+                    <Label
+                      style={{
+                        width: '120px',
+                        'font-size': '0.5em',
+                        background: '#E8E8E8',
+                      }}
+                      basic>
+                      To:
+                    </Label>
+                    <input maxLength="12" />
+                  </Input> */}
+            {/* <Form.TextArea
+                    autoHeight
+                    style={{ color: 'red', 'font-size': '20px' }}
+                    id="msg"
+                    value={this.state.msg}
+                    onChange={event =>
+                      this.onInput(event.target.value, event.target.id)
                     }
-                  />
-                  <Input
-                    style={{ 'font-size': ' 2em' }}
-                    className={s.toInput}
+                    maxLength="255"
+                  /> */}
+            {/* <Input
+                    style={{ 'font-size': ' 1.5em' }}
                     autoHeight
                     id="to"
                     value={this.state.to}
@@ -111,55 +167,38 @@ class NewCard extends React.Component {
                     <Label
                       style={{
                         width: '120px',
-                        'font-size': '1.5em',
+                        'font-size': '0.5em',
                         background: '#E8E8E8',
                       }}
                       basic>
                       To:
                     </Label>
-                    <input />
-                  </Input>
-                </Grid.Column>
+                    <input maxLength="12" />
+                  </Input> */}
+            {/* <Button
+                    className={s.toInput}
+                    loading={this.state.loading}
+                    primary>
+                    Send to the Blockchain!
+                  </Button>
+                  <Message
+                    className={s.toInput}
+                    error
+                    header="Oops"
+                    content={this.state.errorMessage}
+                  /> */}
+            {/* </Grid.Column>
                 <Grid.Column />
               </Grid.Row>
-            </Grid>
-            <Form.TextArea
-              autoHeight
-              className={s.toInput}
-              style={{ color: 'red', 'font-size': '40px' }}
-              label="Write Your Love Letter:"
-              id="msg"
-              value={this.state.msg}
-              onChange={event =>
-                this.onInput(event.target.value, event.target.id)
-              }
-            />
-            <Message
-              className={s.toInput}
-              error
-              header="Oops"
-              content={this.state.errorMessage}
-            />
-
-            <Button className={s.toInput} loading={this.state.loading} primary>
-              Send to the Blockchain!
-            </Button>
+            </Grid> */}
           </Form>
-          <Button
-            className={s.toInput}
+          {/* <Button
+            className={s.xoButton}
+            circular={true}
             id="xoxo"
             onClick={event => this.onInput('', event.target.id)}>
             xo{this.state.xoxo}
-          </Button>
-        </div>
-        <div className={s.container}>
-          <Card
-            to={this.state.to}
-            from={this.state.from}
-            msg={this.state.msg}
-            hash={this.state.hash}
-            xoxo={this.state.xoxo}
-          />
+          </Button> */}
         </div>
       </div>
     );
