@@ -6,19 +6,23 @@ import Card from '../../components/Card';
 import { Statistic } from 'semantic-ui-react';
 
 import createBrowserHistory from 'history/createBrowserHistory';
+import router from '../../router';
+import routes from '../index';
 
 import cardFactory from '../../ethereum/cardFactory.js';
 
 class ViewCard extends React.Component {
   state = {
-    hash: createBrowserHistory().location.pathname.substring(6),
-    msg: '',
+    hash: this.props.address, //'0xb4032258f78dffb0227d8cacc1300aca34ddcc4f934c7bb64de50576878fecc2', //createBrowserHistory().location.pathname.substring(6),
+    msg: 'hello',
   };
 
   async componentDidMount() {
+    // console.log(this.state);
+    // console.log(router);
+    // console.log(routes);
     const msg = await cardFactory.methods.cards(this.state.hash).call();
     this.setState({ msg: msg });
-
     // return msg;
   }
 

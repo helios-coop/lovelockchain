@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './NewCard.css';
+import history from '../../history';
 
 import Card from '../../components/Card';
 
@@ -32,7 +33,7 @@ class NewCard extends React.Component {
 
   hashMessage() {
     this.setState({
-      hash: Web3Utils.soliditySha3(
+      hash: web3.utils.keccak256(
         // this.state.to + this.state.from + this.state.msg + this.state.xoxo,
         this.state.msg,
       ),
@@ -79,6 +80,7 @@ class NewCard extends React.Component {
     }
 
     this.setState({ loading: false });
+    history.push(`/card/${this.state.hash}`);
   };
 
   render() {

@@ -45,10 +45,12 @@ const routes = {
         },
         {
           path: '/:address',
-          action: ctx => `#${ctx.params.address}`,
-          // action: context => context.params,
+          // action: ctx => `#${console.log(ctx.params.address)}`,
+          // action() {
+          //   context => console.log(context.params);
+          // },
           // action: console.log(address),
-          load: () => import(/* webpackChunkName: 'my-cards' */ './card'),
+          load: context => import(/* webpackChunkName: 'my-cards' */ './card'),
         },
       ],
     },
