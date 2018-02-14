@@ -24,9 +24,9 @@ class NewCard extends React.Component {
   state = {
     to: '',
     from: '',
-    msg: 'Blockchains Are Forever!',
+    msg: 'Blockchains Are Forever!!! xoxoxoxoxo',
     xoxo: '',
-    hash: '0xb4032258f78dffb0227d8cacc1300aca34ddcc4f934c7bb64de50576878fecc2',
+    hash: '',
     errorMessage: '',
     loading: false,
   };
@@ -79,8 +79,14 @@ class NewCard extends React.Component {
       this.setState({ errorMessage: err.message });
     }
 
+    let allHashes = [];
+    allHashes = await cardFactory.methods.getHashes().call();
+    const dest = await cardFactory.methods.hashes(allHashes.length - 1).call();
+
+    history.push(`/card/${dest}`);
+
     this.setState({ loading: false });
-    history.push(`/card/${this.state.hash}`);
+    // history.push(`/card/${this.state.hash}`);
   };
 
   render() {

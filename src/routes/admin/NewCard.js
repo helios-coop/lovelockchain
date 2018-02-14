@@ -17,7 +17,7 @@ import {
 } from 'semantic-ui-react';
 
 import Web3Utils from 'web3-utils';
-import web3 from '../../ethereum/web3.js';
+import Web3 from '../../ethereum/web3.js';
 import cardFactory from '../../ethereum/cardFactory.js';
 
 class NewCard extends React.Component {
@@ -33,7 +33,7 @@ class NewCard extends React.Component {
 
   hashMessage() {
     this.setState({
-      hash: web3.utils.soliditySha3(
+      hash: Web3.utils.soliditySha3(
         // this.state.to + this.state.from + this.state.msg + this.state.xoxo,
         this.state.msg,
       ),
@@ -54,6 +54,14 @@ class NewCard extends React.Component {
       this.setState({ xoxo: `${this.state.xoxo}xo` });
     }
     this.hashMessage();
+
+    // let test = [];
+    // test = await cardFactory.methods.getHashes().call();
+    // console.log(test);
+    // // let l = test.length - 1;
+    // // console.log(l);
+    // const a = await cardFactory.methods.hashes(test.length - 1).call();
+    // console.log(a);
   }
 
   onSubmit = async event => {
@@ -66,12 +74,12 @@ class NewCard extends React.Component {
       this.state.msg;
 
     try {
-      const accounts = await web3.eth.getAccounts();
+      const accounts = await Web3.eth.getAccounts();
       // console.log(accounts);
       // console.log(cardFactory);
       await cardFactory.methods.createCard(loveLetter).send({
         from: accounts[0],
-        value: web3.utils.toWei('0', 'ether'),
+        value: Web3.utils.toWei('0', 'ether'),
       });
 
       // Router.pushRoute('/');
@@ -79,12 +87,18 @@ class NewCard extends React.Component {
       this.setState({ errorMessage: err.message });
     }
 
+    let allHashes = [];
+    allHashes = await cardFactory.methods.getHashes().call();
+    const dest = await cardFactory.methods.hashes(allHashes.length - 1).call();
+
+    history.push(`/card/${dest}`);
+
     this.setState({ loading: false });
-    history.push(`/card/${this.state.hash}`);
+    // history.push(`/card/${this.state.hash}`);
   };
 
   render() {
-    // console.log(this.state.hash);
+    // console.log(Web3Utils.soliditySha3(this.state.msg));
     return (
       <div className={s.root}>
         <div>

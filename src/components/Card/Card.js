@@ -2,6 +2,7 @@ import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Card.css';
 import Link from '../Link';
+import web3 from '../../ethereum/web3.js';
 
 const bkgd = './assets/backgrounds/';
 const brdr = './assets/borders/';
@@ -13,9 +14,13 @@ class Card extends React.Component {
   }
 
   render() {
-    const a = parseInt(this.props.hash.substring(2, 4), 16) % 8;
-    const b = parseInt(this.props.hash.substring(4, 6), 16) % 8;
-    const c = parseInt(this.props.hash.substring(6, 8), 16) % 8;
+    // const a = parseInt(this.props.hash.substring(2, 4), 16) % 8;
+    // const b = parseInt(this.props.hash.substring(4, 6), 16) % 8;
+    // const c = parseInt(this.props.hash.substring(6, 8), 16) % 8;
+
+    const a = parseInt(web3.utils.sha3(this.props.msg).substring(2, 4), 16) % 8;
+    const b = parseInt(web3.utils.sha3(this.props.msg).substring(4, 6), 16) % 8;
+    const c = parseInt(web3.utils.sha3(this.props.msg).substring(6, 8), 16) % 8;
 
     return (
       <div className={s.root}>
