@@ -70,7 +70,7 @@ class NewCard extends React.Component {
       console.log(cardFactory);
       await cardFactory.methods.createCard(loveLetter).send({
         from: accounts[0],
-        value: web3.utils.toWei('.001', 'ether'),
+        value: web3.utils.toWei('0', 'ether'),
       });
 
       // Router.pushRoute('/');
