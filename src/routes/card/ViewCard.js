@@ -14,7 +14,7 @@ import cardFactory from '../../ethereum/cardFactory.js';
 class ViewCard extends React.Component {
   state = {
     hash: this.props.address, //'0xb4032258f78dffb0227d8cacc1300aca34ddcc4f934c7bb64de50576878fecc2', //createBrowserHistory().location.pathname.substring(6),
-    msg: 'hello',
+    msg: 'Loading Valentine...',
   };
 
   async componentDidMount() {

@@ -33,7 +33,7 @@ class NewCard extends React.Component {
 
   hashMessage() {
     this.setState({
-      hash: web3.utils.keccak256(
+      hash: web3.utils.soliditySha3(
         // this.state.to + this.state.from + this.state.msg + this.state.xoxo,
         this.state.msg,
       ),
@@ -71,7 +71,7 @@ class NewCard extends React.Component {
       // console.log(cardFactory);
       await cardFactory.methods.createCard(loveLetter).send({
         from: accounts[0],
-        value: web3.utils.toWei('0.0005', 'ether'),
+        value: web3.utils.toWei('0', 'ether'),
       });
 
       // Router.pushRoute('/');

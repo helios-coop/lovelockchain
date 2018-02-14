@@ -25,12 +25,12 @@
   margin: 0 auto;
   padding: 0 0 40px;
   max-width: var(--max-content-width);
-  z-index: -1;
+  z-index: 0;
   position: absolute;
+  background: transparent;
 }
 
 .newsItem {
-  margin: 0 0 2rem;
 }
 
 .newsTitle {

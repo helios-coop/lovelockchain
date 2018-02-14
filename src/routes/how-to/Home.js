@@ -1,12 +1,3 @@
-/**
- * React Starter Kit (https://www.reactstarterkit.com/)
- *
- * Copyright © 2014-present Kriasoft, LLC. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
-
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Home.css';
@@ -52,12 +43,16 @@ class Home extends React.Component {
                 transaction.
               </li>
               <li>
-                Ensure you are logged into your Meta Mask account. Generally
-                you&apos;ll be logged out if you haven&apos;t recently used it.
+                Ensure you are logged into your Meta Mask account on the
+                ethereum main network. Generally you&apos;ll be logged out if
+                you haven&apos;t recently used it.
               </li>
               <li>
                 Go to this page and
-                <a href="http://lovelockchain.com/new"> create a note here</a>
+                <a href="http://lovelockchain.com/new">
+                  {' '}
+                  write your valentine now!
+                </a>
               </li>
               <li>After creating a note, Meta Mask will popup for approval.</li>
               <img
@@ -75,14 +70,37 @@ class Home extends React.Component {
           <hr />
 
           <h1>If you already have Ether, but are new to Meta Mask</h1>
-          <p className={s.mb40}>Instructions here</p>
+          <p className={s.mb40}>
+            <a href="https://metamask.io/">
+              Head on over to Meta Mask and download their nifty browser
+              extension.
+            </a>
+            <br />
+            It allows you to interact with all sorts of decentralized
+            applications on the etherem blockchain. So if you already have some
+            ether, well it's time to put it to some use and write a love letter!
+            <br />
+            Once you're done, follow this steps above.
+          </p>
           <hr />
 
           <h1>
             If Your brand new to this blockchain stuff. Whats a Meta Mask, what
             is ether?
           </h1>
-          <p className={s.mb40}>Instructions here</p>
+          <p className={s.mb40}>
+            Well hello there newcomer! I am so glad my project has promted you
+            to find out more about what all this <bold>blochchain</bold> stuff
+            is all about! I hope this can be a fun way for you to learn how to
+            interact with an ethereum DApp (Decentralized Application) and
+            become part of our ever-growing community of enthusiasts.
+            <a href="https://www.coinbase.com/">
+              This first thing you'll need to do is buy some ethereum.
+            </a>
+            I always reccomend <a href="https://www.coinbase.com/">Coinbase</a>{' '}
+            for those buying the first time because it's so easy to use! Here
+            are some fantastic re
+          </p>
           <hr />
         </div>
       </div>

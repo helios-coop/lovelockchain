@@ -26,15 +26,26 @@ class Home extends React.Component {
       };
     });
 
-    return (
-      <Card.Group style={{ background: 'pink', color: 'red' }} items={items} />
-    );
+    return <Card.Group items={items} />;
   }
 
   render() {
     return (
       <div className={s.root}>
-        <div className={s.container}>{this.renderLocks()}</div>
+        <div className={s.container}>
+          <div style={{ backgroundColor: 'rgba(255, 192, 203, 0.4)' }}>
+            <h1 style={{ color: 'purple' }}>
+              &hearts; Discover A Valentine Below or Write Yours Today! &hearts;
+            </h1>
+            <h3 style={{ color: 'purple', textTransform: 'capitalize' }}>
+              don't hurt a tree or break a bridge, profess your digital love
+              because
+              <bold> BLOCKCHAINS ARE FOREVER! </bold>
+            </h3>
+            <br />
+          </div>
+          {this.renderLocks()}
+        </div>
       </div>
     );
   }

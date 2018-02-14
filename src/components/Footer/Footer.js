@@ -34,6 +34,12 @@ class Footer extends React.Component {
           <Link className={s.link} to="/contact">
             Contact
           </Link>
+          <span className={s.spacer}>·</span>
+          <Link
+            className={s.link}
+            to="/card/0x544EbF543dE093eF6C442F5AD2a376cF7c665038">
+            Dedicated to Margarita, I &hearts; U
+          </Link>
         </div>
       </div>
     );

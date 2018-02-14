@@ -63,11 +63,11 @@
 
 .container {
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 0px 0;
   max-width: 100%;
 
   position: relative;
-  background: #ffffff;
+  background: #000;
 }
 
 .brand {

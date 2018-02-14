@@ -26,15 +26,22 @@ class MyCards extends React.Component {
       };
     });
 
-    return (
-      <Card.Group style={{ background: 'pink', color: 'red' }} items={items} />
-    );
+    return <Card.Group items={items} />;
   }
 
   render() {
     return (
       <div className={s.root}>
-        <div className={s.container}>{this.renderLocks()}</div>
+        <div className={s.container}>
+          <h1
+            style={{
+              color: 'purple',
+              backgroundColor: 'rgba(255, 192, 203, 0.4)',
+            }}>
+            ~ All My Valentines ~
+          </h1>
+          {this.renderLocks()}
+        </div>
       </div>
     );
   }

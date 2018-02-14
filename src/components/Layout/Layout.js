@@ -17,6 +17,7 @@ import s from './Layout.css';
 import Header from '../Header';
 import Feedback from '../Feedback';
 import Footer from '../Footer';
+// const bkgd = require('./4.png');
 
 class Layout extends React.Component {
   static propTypes = {
@@ -25,9 +26,14 @@ class Layout extends React.Component {
 
   render() {
     return (
-      <div>
+      <div
+        style={{
+          backgroundImage: 'url(' + require('./main_background.png') + ')',
+          backgroundRepeat: 'round',
+          height: '100vh',
+          zIndex: '-2',
+        }}>
         <Header />
-
         {this.props.children}
         <div className={s.footer}>
           <Feedback />

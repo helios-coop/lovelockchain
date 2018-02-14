@@ -29,6 +29,10 @@ const routes = {
       load: () => import(/* webpackChunkName: 'new' */ './new'),
     },
     {
+      path: '/admin',
+      load: () => import(/* webpackChunkName: 'admin' */ './admin'),
+    },
+    {
       path: '/how-to',
       load: () => import(/* webpackChunkName: 'how-to' */ './how-to'),
     },
